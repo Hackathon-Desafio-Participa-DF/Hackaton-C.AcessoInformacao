@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+  <!-- Bandeira do GDF simplificada -->
+  <rect x="0" y="10" width="50" height="40" fill="#006341"/>
+  <rect x="10" y="20" width="30" height="20" fill="#FFFFFF"/>
+  <rect x="15" y="25" width="20" height="10" fill="#006341"/>
+
+  <!-- Texto GDF -->
+  <text x="60" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="currentColor">
+    GDF
+  </text>
+</svg>

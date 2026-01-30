@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#FFF9E6"/>
+
+  <!-- Document -->
+  <rect x="120" y="40" width="160" height="200" rx="10" fill="#FFFFFF" stroke="#006341" stroke-width="3"/>
+
+  <!-- Document header -->
+  <rect x="120" y="40" width="160" height="40" rx="10" fill="#006341"/>
+  <rect x="120" y="70" width="160" height="10" fill="#006341"/>
+
+  <!-- Protocol number -->
+  <text x="200" y="67" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF" text-anchor="middle">
+    PROTOCOLO
+  </text>
+
+  <!-- Barcode lines -->
+  <rect x="140" y="100" width="4" height="30" fill="#333"/>
+  <rect x="148" y="100" width="2" height="30" fill="#333"/>
+  <rect x="154" y="100" width="6" height="30" fill="#333"/>
+  <rect x="164" y="100" width="3" height="30" fill="#333"/>
+  <rect x="170" y="100" width="5" height="30" fill="#333"/>
+  <rect x="180" y="100" width="2" height="30" fill="#333"/>
+  <rect x="186" y="100" width="4" height="30" fill="#333"/>
+  <rect x="194" y="100" width="6" height="30" fill="#333"/>
+  <rect x="204" y="100" width="2" height="30" fill="#333"/>
+  <rect x="210" y="100" width="4" height="30" fill="#333"/>
+  <rect x="218" y="100" width="3" height="30" fill="#333"/>
+  <rect x="226" y="100" width="5" height="30" fill="#333"/>
+  <rect x="236" y="100" width="2" height="30" fill="#333"/>
+  <rect x="242" y="100" width="4" height="30" fill="#333"/>
+  <rect x="250" y="100" width="6" height="30" fill="#333"/>
+  <rect x="260" y="100" width="2" height="30" fill="#333"/>
+
+  <!-- Protocol number text -->
+  <text x="200" y="150" font-family="monospace" font-size="12" fill="#333" text-anchor="middle">
+    2024-000001
+  </text>
+
+  <!-- Status lines -->
+  <line x1="140" y1="170" x2="260" y2="170" stroke="#E0E0E0" stroke-width="2"/>
+  <line x1="140" y1="190" x2="240" y2="190" stroke="#E0E0E0" stroke-width="2"/>
+  <line x1="140" y1="210" x2="220" y2="210" stroke="#E0E0E0" stroke-width="2"/>
+
+  <!-- Magnifying glass -->
+  <circle cx="320" cy="180" r="45" fill="none" stroke="#FFC300" stroke-width="8"/>
+  <line x1="350" y1="210" x2="380" y2="250" stroke="#FFC300" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- Check mark in magnifying glass -->
+  <path d="M295 180 L310 195 L345 160" stroke="#006341" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

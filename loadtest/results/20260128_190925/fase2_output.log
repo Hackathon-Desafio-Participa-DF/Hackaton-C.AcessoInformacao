@@ -1,0 +1,45 @@
+[2026-01-28 19:10:23,129] DESKTOP-0G8RGEV/INFO/locust.main: Starting Locust 2.43.1
+[2026-01-28 19:10:23,130] DESKTOP-0G8RGEV/INFO/locust.main: Run time limit set to 120 seconds
+[2026-01-28 19:10:23,130] DESKTOP-0G8RGEV/INFO/locust.runners: Ramping to 50 users at a rate of 5.00 per second
+[2026-01-28 19:10:32,146] DESKTOP-0G8RGEV/INFO/locust.runners: All users spawned: {"CidadaoUser": 40, "GestorUser": 10} (50 total users)
+[2026-01-28 19:12:18,150] DESKTOP-0G8RGEV/INFO/locust.main: --run-time limit reached, shutting down
+[2026-01-28 19:12:16,771] DESKTOP-0G8RGEV/INFO/locust.main: writing html report to file: ./results/20260128_190925/fase2_moderada.html
+[2026-01-28 19:12:16,773] DESKTOP-0G8RGEV/INFO/locust.main: Shutting down (exit code 1)
+Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+GET      /api/admin/dashboard                                                              57     0(0.00%) |      3       2      11      3 |    0.50        0.00
+GET      /api/admin/manifestacoes [GET]                                                   105   15(14.29%) |      4       2      28      4 |    0.91        0.13
+GET      /api/admin/manifestacoes/:id [GET]                                                62     0(0.00%) |      3       2      10      3 |    0.54        0.00
+POST     /api/admin/manifestacoes/:id/resposta [POST]                                      22     0(0.00%) |     19      16      21     19 |    0.19        0.00
+PATCH    /api/admin/manifestacoes/:id/status [PATCH]                                       47     0(0.00%) |     10       8      21     11 |    0.41        0.00
+POST     /api/auth/login                                                                   10     0(0.00%) |     75      68      89     70 |    0.09        0.00
+POST     /api/manifestacoes [POST]                                                        475     0(0.00%) |     13       8      91     11 |    4.14        0.00
+GET      /api/manifestacoes/:protocolo [GET 404]                                          158 158(100.00%) |      4       1      91      3 |    1.38        1.38
+GET      /api/manifestacoes/:protocolo [GET]                                              786     0(0.00%) |      3       1      89      3 |    6.85        0.00
+GET      /health                                                                          152     0(0.00%) |      2       0      72      2 |    1.32        0.00
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+         Aggregated                                                                      1874   173(9.23%) |      6       0      91      3 |   16.32        1.51
+
+Response time percentiles (approximated)
+Type     Name                                                                                  50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+GET      /api/admin/dashboard                                                                    3      3      3      3      3      4     11     12     12     12     12     57
+GET      /api/admin/manifestacoes [GET]                                                          4      4      4      4      4      5      6     12     29     29     29    105
+GET      /api/admin/manifestacoes/:id [GET]                                                      3      3      4      4      4      4      4     11     11     11     11     62
+POST     /api/admin/manifestacoes/:id/resposta [POST]                                           19     20     21     21     21     21     21     21     21     21     21     22
+PATCH    /api/admin/manifestacoes/:id/status [PATCH]                                            11     11     11     11     12     14     21     21     21     21     21     47
+POST     /api/auth/login                                                                        72     78     81     88     90     90     90     90     90     90     90     10
+POST     /api/manifestacoes [POST]                                                              11     12     12     12     14     18     31     78     92     92     92    475
+GET      /api/manifestacoes/:protocolo [GET 404]                                                 3      3      3      3      3      3     10     74     91     91     91    158
+GET      /api/manifestacoes/:protocolo [GET]                                                     3      3      3      3      3      5     11     70     89     89     89    786
+GET      /health                                                                                 2      2      2      2      2      2      4      5     73     73     73    152
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+         Aggregated                                                                              3      4     11     11     12     14     29     73     91     92     92   1874
+
+Error report
+# occurrences      Error                                                                                               
+------------------|---------------------------------------------------------------------------------------------------------------------------------------------
+158                GET /api/manifestacoes/:protocolo [GET 404]: HTTPError('500 Server Error: Internal Server Error for url: /api/manifestacoes/:protocolo [GET 404]')
+15                 GET /api/admin/manifestacoes [GET]: HTTPError('500 Server Error: Internal Server Error for url: /api/admin/manifestacoes [GET]')
+------------------|---------------------------------------------------------------------------------------------------------------------------------------------
+
