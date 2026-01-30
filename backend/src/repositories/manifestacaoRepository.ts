@@ -71,7 +71,8 @@ export const manifestacaoRepository = {
     if (search) {
       where.OR = [
         { protocolo: { contains: search } },
-        { descricao: { contains: search } },
+        { assunto: { contains: search } },
+        { relato: { contains: search } },
       ];
     }
 
