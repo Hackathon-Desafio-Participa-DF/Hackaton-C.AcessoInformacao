@@ -1,16 +1,15 @@
-# Hackaton-C.AcessoInformacao
+# Hackaton-C.Ouvidoria
 
-Trata-se do primeiro Hackaton em controle social promovido pe Controladoria Geral do Distrito Federal. Neste presente repositório contém o conteúdo referente a categoria de Acesso a Informação.
+Trata-se do primeiro Hackaton em controle social promovido pe Controladoria Geral do Distrito Federal. Neste presente repositório contém o conteúdo referente a categoria de Ouvidoria.
 
-# Categoria Acesso à Informação
+# Categoria Ouvidoria
 
-A CGDF disponibilizará no sítio eletrônico https://www.cg.df.gov.br/, um conjunto amostral de
-pedidos de acesso à informação, recebidos pelo Governo do Distrito Federal e previamente
-marcados como públicos. Parte dessas manifestações conterá dados sintéticos (simulações de
-dados pessoais), criados exclusivamente para fins de teste, com o objetivo de permitir que os
-participantes desenvolvam modelos capazes de identificar automaticamente pedidos que
-contenham informações pessoais e que, portanto, deveriam ser classificados como não públicos.
-Nenhum dado pessoal real será disponibilizado aos participantes.
+O desafio da categoria Ouvidoria consiste no desenvolvimento de uma versão PWA do
+Sistema Participa DF, que amplie o acesso e a inclusão dos cidadãos na abertura de manifestações.
+A solução deverá contemplar recursos de acessibilidade e permitir o envio de relatos em múltiplos
+formatos, como texto e áudio, com possibilidade de anexar imagem e vídeo, além de assegurar
+anonimato opcional, emissão de protocolo e conformidade com as diretrizes de acessibilidade
+digital (WCAG).
 
 # Execução do projeto
 
