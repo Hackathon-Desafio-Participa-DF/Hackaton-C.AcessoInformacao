@@ -1,6 +1,6 @@
 # Hackaton-C.Ouvidoria
 
-Trata-se do primeiro Hackaton em controle social promovido pe Controladoria Geral do Distrito Federal. Neste presente repositório contém o conteúdo referente a categoria de Ouvidoria.
+Trata-se do primeiro Hackaton em controle social promovido pela Controladoria Geral do Distrito Federal. Neste presente repositório contém o conteúdo referente a categoria de Ouvidoria.
 
 # Categoria Ouvidoria
 
@@ -18,109 +18,108 @@ digital (WCAG).
 - Node.js 20+
 - npm
 
-### npm (SQLite)
+## Instalação e execução
 
-**Backend:**
+> **Importante:** o backend e o frontend devem ser executados em **terminais separados**, pois são serviços independentes.
+
+### Terminal 1 - Backend (API)
+
+Consulte o passo a passo completo de configuração do ambiente em [backend/README.md](backend/README.md).
+
+Resumo rápido:
+
 ```bash
 cd backend
 npm install
-npm run setup:local   # Configura SQLite + migra + popula dados
+# Crie o arquivo .env (veja backend/README.md para detalhes)
+npm run setup         # Cria banco, migra e popula dados
 npm run dev           # http://localhost:3001
 ```
 
-**Frontend:**
+### Terminal 2 - Frontend (PWA)
+
 ```bash
 cd frontend
 npm install
 npm run dev           # http://localhost:5173
 ```
 
+Após ambos os serviços estarem rodando, acesse **http://localhost:5173** no navegador.
+
+## Credenciais de Teste (Gestor)
+
+Após executar o seed:
+- **Email:** admin@cgdf.gov.br
+- **Senha:** admin123
+
+## Testes
+
+```bash
+# Backend (no diretório backend/)
+npm test
+
+# Frontend (no diretório frontend/)
+npm test
+```
 
 # Detalhes do projeto
 
 ## Estrutura do Projeto
 
 ```
-/Hackaton-C.Ouvidoria
-
+OUV/
 ├── frontend/          # PWA React + TypeScript + Vite
 ├── backend/           # API Node.js + Express + Prisma
-├── loadtest/          # Diretório de teste de carga
-└── docker-compose.yml # Configuracao Docker
+└── loadtest/          # Testes de carga (Locust / Python)
 ```
-
-## Credenciais de Teste Gestor
-
-Apos executar o seed:
-- **Email:** admin@cgdf.gov.br
-- **Senha:** admin123
 
 ## Funcionalidades
 
-### Cidadao
-- Registrar manifestacao (reclamacao, sugestao, elogio, denuncia, solicitacao)
-- Descrever por texto ou audio gravado
-- Anexar imagens e videos
-- Opcao de anonimato
-- Receber protocolo unico
+### Cidadão
+- Registrar manifestação (reclamação, sugestão, elogio, denúncia, solicitação)
+- Descrever por texto ou áudio gravado
+- Anexar imagens e vídeos
+- Opção de anonimato
+- Receber protocolo único
 - Consultar status por protocolo
 
 ### Gestor (Admin)
-- Dashboard com estatisticas
-- Listar e filtrar manifestacoes
+- Dashboard com estatísticas
+- Listar e filtrar manifestações
 - Atualizar status
-- Responder manifestacoes
+- Responder manifestações
 
-## Modelo de Manifestacao
+## Modelo de Manifestação
 
 Conforme Manual de Respostas da Ouvidoria Geral do DF:
 
-| Campo | Descricao |
+| Campo | Descrição |
 |-------|-----------|
-| Relato | Relato completo do ocorrido|
-| assunto | O que (objeto da demanda) |
-| dataFato | Quando (data exata) |
-| horarioFato | Horario ou periodo |
-| local | Onde (com referencias) |
-| pessoasEnvolvidas | Nomes e matriculas |
+| Relato | Relato completo do ocorrido |
+| Assunto | O quê (objeto da demanda) |
+| Data do Fato | Quando (data exata) |
+| Horário do Fato | Horário ou período |
+| Local | Onde (com referências) |
+| Pessoas Envolvidas | Nomes e matrículas |
 
 ## Acessibilidade (WCAG 2.1 AA)
 
-- Navegacao por teclado
+- Navegação por teclado
 - Labels e ARIA attributes
 - Contraste de cores adequado
 - Skip links
 - Menu de acessibilidade (ajuste de fonte, alto contraste)
 
-## Scripts do Backend
-
-| Comando | Descricao |
-|---------|-----------|
-| `npm run dev` | Servidor de desenvolvimento |
-| `npm run db:sqlite` | Configura para SQLite |
-| `npm run db:postgres` | Configura para PostgreSQL |
-| `npm run setup:local` | Setup completo local (SQLite) |
-| `npm run prisma:studio` | Interface visual do banco |
-| `npm run seed` | Popula dados de exemplo |
-
-## Scripts do Frontend
-
-| Comando | Descricao |
-|---------|-----------|
-| `npm run dev` | Servidor de desenvolvimento |
-| `npm run build` | Build de producao |
-| `npm run preview` | Preview do build |
-
 ## API Endpoints
 
-### Publicos
-- `POST /api/manifestacoes` - Criar manifestacao
+### Públicos
+- `POST /api/manifestacoes` - Criar manifestação
 - `GET /api/manifestacoes/:protocolo` - Consultar por protocolo
 - `POST /api/upload` - Upload de arquivos
 
 ### Admin (Autenticado)
 - `POST /api/auth/login` - Login
-- `GET /api/admin/dashboard` - Estatisticas
+- `GET /api/admin/dashboard` - Estatísticas
 - `GET /api/admin/manifestacoes` - Listar
 - `GET /api/admin/manifestacoes/:id` - Detalhes
 - `PATCH /api/admin/manifestacoes/:id/status` - Atualizar status
@@ -128,8 +127,10 @@ Conforme Manual de Respostas da Ouvidoria Geral do DF:
 
 ## Tecnologias
 
-**Frontend:** React 18, TypeScript, Vite, Tailwind CSS, Headless UI, PWA
+**Frontend:** React, TypeScript, Vite, Tailwind CSS, Headless UI, PWA
 
 **Backend:** Node.js, Express, TypeScript, Prisma, JWT, Multer
 
-**Banco:** SQLite (dev local)
+**Banco:** SQLite
+
+**Testes:** Vitest (unitários), Locust (carga)
